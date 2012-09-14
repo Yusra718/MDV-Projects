@@ -51,10 +51,28 @@ var quote = function(first, next){
     return say
 };
 
+// Return Array
 
+var pray = function() {
+    var j = prayers.length
+    ;
+    for(var i=0; i<j; i++) {
+        console.log("I have to pray " + prayers[i] + " prayer, before I continue doing anything else.")
+        
+        var     k = i + 1;
+        
+        if (i<4) {
+            console.log("I've only prayed " + k + " prayers so far, I'm not done with today's prayers.")
+        }else{
+            console.log("The last prayer was the " + prayers[4] + " prayer, and I'm happy that I've done what God has asked me to do.")
+        };
+    };
+    return prayers
+};
 
 //Main Code
 procedure("ate", "already prayed")
 booleanFunction(true, true)
 console.log(quote("I'm going to make samosas with ", ". These taste delicious."))
 console.log("I will eat " + samosa.amountForMe(15, 8) + " samosas." )
+console.log(pray())
