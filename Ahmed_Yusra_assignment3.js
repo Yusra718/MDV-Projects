@@ -22,6 +22,28 @@ var procedure = function(eat, prayed) {
     };
 };
 
+// Boolean Function
+
+var booleanFunction = function(reciteQuran, assignments) {
+
+    if (reciteQuran === true) {
+        console.log("I've recited some Quran, now let's login to Fullsail.");
+        if (assignments === true) {
+            console.log("I've finished this week's assignments, now let's see what's for next week.");
+        } else{
+            console.log("I have to finish this week's assignments.");
+        };
+    }else{
+        console.log("Let me recite some Quran before logging on to Fullsail.");
+    };
+    if (reciteQuran === true, assignments === true){
+        return true
+    }else{
+        return false
+    }
+};
+
 //Main Code
 procedure("ate", "already prayed")
+booleanFunction(true, true)
 console.log("I will eat " + samosa.amountForMe(15, 8) + " samosas." )
