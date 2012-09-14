@@ -43,7 +43,18 @@ var booleanFunction = function(reciteQuran, assignments) {
     }
 };
 
+// String Function
+
+var quote = function(first, next){
+
+    var say = first + samosa.type + next;
+    return say
+};
+
+
+
 //Main Code
 procedure("ate", "already prayed")
 booleanFunction(true, true)
+console.log(quote("I'm going to make samosas with ", ". These taste delicious."))
 console.log("I will eat " + samosa.amountForMe(15, 8) + " samosas." )
