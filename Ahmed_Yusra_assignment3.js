@@ -53,26 +53,44 @@ var quote = function(first, next){
 
 // Return Array
 
-var pray = function() {
-    var j = prayers.length
+var pray = function(something) {
+    var j = something.length
     ;
     for(var i=0; i<j; i++) {
-        console.log("I have to pray " + prayers[i] + " prayer, before I continue doing anything else.")
+        console.log("I have to pray " + something[i] + " prayer, before I continue doing anything else.")
         
         var     k = i + 1;
         
         if (i<4) {
             console.log("I've only prayed " + k + " prayers so far, I'm not done with today's prayers.")
         }else{
-            console.log("The last prayer was the " + prayers[4] + " prayer, and I'm happy that I've done what God has asked me to do.")
+            console.log("The last prayer was the " + something[4] + " prayer, and I'm happy that I've done what God has asked me to do.")
         };
     };
-    return prayers
+    return something
+};
+
+// Array Function
+
+var makeSamosa = function(array1, array2) {
+
+    for (var key in samosa) {
+        console.log(key + ": " + samosa[key])
+    }
+    console.log("The ingredients needed to make samosas are:")
+    for (var key in array1){
+        console.log("*" + array1[key])
+    }
+    console.log("The sesonings used to make samosas taste delicious are:")
+    for (var key in array2) {
+        console.log("*" + array2[key])
+    }
 };
 
 //Main Code
 procedure("ate", "already prayed")
 booleanFunction(true, true)
 console.log(quote("I'm going to make samosas with ", ". These taste delicious."))
+makeSamosa(samosa.recipe.Ingredients, samosa.recipe.Seasoning)
 console.log("I will eat " + samosa.amountForMe(15, 8) + " samosas." )
-console.log(pray())
+console.log(pray(prayers))
