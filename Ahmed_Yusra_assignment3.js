@@ -3,7 +3,12 @@
 // Project 3
 
 //Declare Variables
-var prayers = ["Dawn", "Midday", "Afternoon", "Dusk", "Evening"];
+var prayers = ["Dawn",
+               "Midday",
+               "Afternoon",
+               "Dusk",
+               "Evening"]
+;
 
 //Procedure
 
