@@ -10,7 +10,7 @@ var prayers = ["Dawn",
                "Evening"]
 ;
 
-//Procedure
+// String Procedure
 
 var procedure = function(eat, prayed) {
     console.log("I wake up at 3 am.")
@@ -60,7 +60,7 @@ var quote = function(first, next){
     return string
 };
 
-// Return Array
+// Array Function
 
 var pray = function(array) {
     var j = array.length
@@ -88,7 +88,7 @@ var samosaRecipe = function(object) {
     return object
 };
 
-// Loops
+// Array Procedure
 
 var makeSamosa = function(array1, array2) {
                         console.log("The ingredients needed to make samosas are:")
@@ -101,21 +101,22 @@ var makeSamosa = function(array1, array2) {
                         }
 };
 
-//Number Function
+//Number Procedure
 var eatSamosas = function(){
         var h = 15,
         l = 8,
         mine = h-l
         ;
     console.log("There are " + h + " samosas, I'll eat one.")
-    while (h > l) {
-        h--
         if (h>l) {
+            while (h > l) {
+                h--
             console.log("There are " + h + " left. I'l stuff my face with one more.")
-        }else{
-            console.log("I ate " + mine + " samosas. I'll leave " + l + " for everyone else.")
         }
-    }
+        }else{
+            console.log("There isn't enough for everyone.")
+        }
+        console.log("I ate " + mine + " samosas, I'll leave " + l + " for everyone else.")
 }
 
 //Main Code
@@ -129,3 +130,5 @@ makeSamosa(samosa.recipe.Ingredients, samosa.recipe.Seasoning)
 console.log("I will eat " + samosa.amountForMe(15, 8) + " samosas." )
 eatSamosas()
 console.log(pray(prayers))
+console.log(samosa.getHowMany())
+console.log(samosa.setType(samosa.type))

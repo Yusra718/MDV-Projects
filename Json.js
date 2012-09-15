@@ -16,5 +16,12 @@ var samosa ={
                                     for (var key in mainObject) {
                                         console.log(key + ": " + mainObject[key])
                                     }
-                                }
+                                },                                   
+    "getHowMany":               function(){
+                                        return this.howMany    
+                                    },
+    "setType":                  function(type){
+                                        pC = this.type
+                                    }
 };
+var pC = "Potato Chunks"
