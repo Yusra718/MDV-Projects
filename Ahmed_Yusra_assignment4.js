@@ -6,6 +6,7 @@
 var yusraLibrary = function() {
     
     // Check Phone Number Function
+
     var checkPhone = function(string) {
         if(isNaN(string.substring(0,2))) {
             return false
@@ -23,6 +24,7 @@ var yusraLibrary = function() {
     };
     
     // Check Email Address Function
+
     var checkEmail = function(string) {
         var firstSign = string.indexOf("@"),
             secondSign = string.indexOf("."),
@@ -42,7 +44,8 @@ var yusraLibrary = function() {
         }
     };
     
-    // Check URL
+    // Check URL Function
+
     var checkURL = function(string) {
         var initial = string.substring(0,string.indexOf(":")),
             next = string.substring(string.indexOf(":")+1,string.indexOf(".")),
@@ -66,6 +69,9 @@ var yusraLibrary = function() {
                 }
             }
     };
+    
+    // Mutating String Seperator
+    
     return {
         "checkPhone":   checkPhone,
         "checkEmail":   checkEmail,
@@ -76,7 +82,7 @@ var yusraLibrary = function() {
 
 var newLibrary = new yusraLibrary();
 
-// I've console.logged each function a few times with different inputs to see the difference.
+// I've console.logged each function a few times with different inputs to see the results of the functions.
 
 // Phone Check
 console.log(newLibrary.checkPhone("407-679-0100"))
@@ -91,4 +97,5 @@ console.log(newLibrary.checkEmail("1234@5678.901"))
 console.log(newLibrary.checkURL("https:connect.fullsail.edu"))
 console.log(newLibrary.checkURL("gmail.com"))
 console.log(newLibrary.checkURL("www.wikipedia.org"))
+console.log(newLibrary.checkURL("https"))
 console.log(newLibrary.checkURL("hello"))
