@@ -70,12 +70,18 @@ var yusraLibrary = function() {
             }
     };
     
-    // Mutating String Seperator
+    // Changing String Seperator
     
+    var fourthStringFunction = function(string) {
+        string = string.replace(",","/")
+        string = string.replace(",","/");
+        return string
+    };
     return {
-        "checkPhone":   checkPhone,
-        "checkEmail":   checkEmail,
-        "checkURL":    checkURL
+        "checkPhone":              checkPhone,
+        "checkEmail":              checkEmail,
+        "checkURL":                checkURL,
+        "fourthStringFunction":     fourthStringFunction
     };
     
 };
@@ -99,3 +105,6 @@ console.log(newLibrary.checkURL("gmail.com"))
 console.log(newLibrary.checkURL("www.wikipedia.org"))
 console.log(newLibrary.checkURL("https"))
 console.log(newLibrary.checkURL("hello"))
+
+// String Seperator Check
+console.log(newLibrary.fourthStringFunction("JavaScript,HTML,CSS"))
