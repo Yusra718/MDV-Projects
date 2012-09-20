@@ -42,9 +42,34 @@ var yusraLibrary = function() {
         }
     };
     
+    // Check URL
+    var checkURL = function(string) {
+        var initial = string.substring(0,string.indexOf(":")),
+            next = string.substring(string.indexOf(":")+1,string.indexOf(".")),
+            third = string.substring(string.indexOf(".")+1,string.lastIndexOf(".")),
+            end = string.substring(string.lastIndexOf(".")+1,string.length);
+        if((initial === "http") || (initial === "https")) {
+            return true
+            } else {
+                if((next === "www")) {
+                    return true
+                } else {
+                    if((end === "com") || (end === "net") || (end === "edu") || (end === "org") || (end === "us")) {
+                        return true
+                    } else {
+                        if(isNaN(third)){
+                            return true
+                        } else {
+                            return false
+                        }
+                    }
+                }
+            }
+    };
     return {
         "checkPhone":   checkPhone,
-        "checkEmail":   checkEmail
+        "checkEmail":   checkEmail,
+        "checkURL":    checkURL
     };
     
 };
@@ -53,8 +78,17 @@ var newLibrary = new yusraLibrary();
 
 // I've console.logged each function a few times with different inputs to see the difference.
 
+// Phone Check
 console.log(newLibrary.checkPhone("407-679-0100"))
 console.log(newLibrary.checkPhone("tel-eph-one#"))
+
+// Email Check
 console.log(newLibrary.checkEmail("Yusra718@fullsail.edu"))
 console.log(newLibrary.checkEmail("Yusra718fullsailedu"))
 console.log(newLibrary.checkEmail("1234@5678.901"))
+
+// URL Check
+console.log(newLibrary.checkURL("https:connect.fullsail.edu"))
+console.log(newLibrary.checkURL("gmail.com"))
+console.log(newLibrary.checkURL("www.wikipedia.org"))
+console.log(newLibrary.checkURL("hello"))
