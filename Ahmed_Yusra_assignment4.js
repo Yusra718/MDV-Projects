@@ -77,11 +77,20 @@ var yusraLibrary = function() {
         string = string.replace(",","/");
         return string
     };
+    
+    // Decimal Number Function
+    
+    var num = function(number) {
+        number = number.toFixed(2);
+        return number
+    }
+    
     return {
         "checkPhone":              checkPhone,
         "checkEmail":              checkEmail,
         "checkURL":                checkURL,
-        "fourthStringFunction":     fourthStringFunction
+        "fourthStringFunction":    fourthStringFunction,
+        "num":                     num
     };
     
 };
@@ -108,3 +117,9 @@ console.log(newLibrary.checkURL("hello"))
 
 // String Seperator Check
 console.log(newLibrary.fourthStringFunction("JavaScript,HTML,CSS"))
+console.log(newLibrary.fourthStringFunction("Interests,Hobbies,Games"))
+
+// Decimal FUnction Check
+console.log(newLibrary.num(12.178))
+console.log(newLibrary.num(17))
+console.log(newLibrary.num(134.8))
