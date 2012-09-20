@@ -22,13 +22,39 @@ var yusraLibrary = function() {
         }
     };
     
+    // Check Email Address Function
+    var checkEmail = function(string) {
+        var firstSign = string.indexOf("@"),
+            secondSign = string.indexOf("."),
+            end = string.length;
+        if(isNaN(string.substring(0,firstSign))) {
+            if(isNaN(string.substring(firstSign,secondSign))) {
+                if(isNaN(string.substring(secondSign,end))) {
+                    return true
+                } else {
+                    return false
+                }
+            }else {
+                return false
+            }
+        } else {
+            return false
+        }
+    };
     
     return {
-        "checkPhone":   checkPhone
+        "checkPhone":   checkPhone,
+        "checkEmail":   checkEmail
     };
     
 };
 
 var newLibrary = new yusraLibrary();
 
+// I've console.logged each function a few times with different inputs to see the difference.
+
 console.log(newLibrary.checkPhone("407-679-0100"))
+console.log(newLibrary.checkPhone("tel-eph-one#"))
+console.log(newLibrary.checkEmail("Yusra718@fullsail.edu"))
+console.log(newLibrary.checkEmail("Yusra718fullsailedu"))
+console.log(newLibrary.checkEmail("1234@5678.901"))
