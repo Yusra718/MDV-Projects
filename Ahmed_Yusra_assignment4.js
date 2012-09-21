@@ -96,13 +96,21 @@ var yusraLibrary = function() {
         }
     };
     
+    // String Number
+    
+    var number = function(string) {
+        return string.substring(0,string.length)
+    }
+    
+    
     return {
         "checkPhone":                      checkPhone,
         "checkEmail":                      checkEmail,
         "checkURL":                        checkURL,
         "stringSeparatorFunction":         stringSeparatorFunction,
         "num":                             num,
-        "fuzzyMatcher":                    fuzzyMatcher
+        "fuzzyMatcher":                    fuzzyMatcher,
+        "number":                          number
     };
     
 };
@@ -139,3 +147,7 @@ console.log(newLibrary.num(134.8))
 // Fuzzy-Match Function Check
 console.log(newLibrary.fuzzyMatcher(1050,90))
 console.log(newLibrary.fuzzyMatcher(72,77))
+
+// Date Ckeck Function
+console.log(newLibrary.number("987324"))
+console.log(newLibrary.number("93857234897592834759"))
