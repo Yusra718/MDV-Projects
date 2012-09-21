@@ -72,8 +72,8 @@ var yusraLibrary = function() {
     
     // Changing String Seperator
     
-    var fourthStringFunction = function(string) {
-        string = string.replace(",","/")
+    var stringSeparatorFunction = function(string) {
+        string = string.replace(",","/"),
         string = string.replace(",","/");
         return string
     };
@@ -85,12 +85,24 @@ var yusraLibrary = function() {
         return number
     }
     
+    // Fuzzy-Match Number Function
+    
+    var fuzzyMatcher = function(number,percentNumber) {
+        var someMath = number*(percentNumber/100);
+        if(someMath < percentNumber) {
+            return true
+        } else {
+            return false
+        }
+    };
+    
     return {
-        "checkPhone":              checkPhone,
-        "checkEmail":              checkEmail,
-        "checkURL":                checkURL,
-        "fourthStringFunction":    fourthStringFunction,
-        "num":                     num
+        "checkPhone":                      checkPhone,
+        "checkEmail":                      checkEmail,
+        "checkURL":                        checkURL,
+        "stringSeparatorFunction":         stringSeparatorFunction,
+        "num":                             num,
+        "fuzzyMatcher":                    fuzzyMatcher
     };
     
 };
@@ -116,10 +128,14 @@ console.log(newLibrary.checkURL("https"))
 console.log(newLibrary.checkURL("hello"))
 
 // String Seperator Check
-console.log(newLibrary.fourthStringFunction("JavaScript,HTML,CSS"))
-console.log(newLibrary.fourthStringFunction("Interests,Hobbies,Games"))
+console.log(newLibrary.stringSeparatorFunction("JavaScript,HTML,CSS"))
+console.log(newLibrary.stringSeparatorFunction("Interests,Hobbies,Games"))
 
-// Decimal FUnction Check
+// Decimal Function Check
 console.log(newLibrary.num(12.178))
 console.log(newLibrary.num(17))
 console.log(newLibrary.num(134.8))
+
+// Fuzzy-Match Function Check
+console.log(newLibrary.fuzzyMatcher(1050,90))
+console.log(newLibrary.fuzzyMatcher(72,77))
